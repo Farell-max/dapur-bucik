@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: 'Playfair Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
+    --color-bucik-cream: #FAF4E8;
+    --color-bucik-green: #1B362D;
+    --color-bucik-green-dark: #12261F;
+    --color-bucik-gold: #E29E31;
+    --color-bucik-gold-hover: #CC8A22;
+}
+
+@layer base {
+    body {
+        background-color: #FAF4E8;
+        color: #1B362D;
+        font-family: var(--font-sans);
+    }
+
+    h1, h2, h3, .font-display {
+        font-family: var(--font-serif);
+    }
+}
+
+@layer components {
+    /* Bentuk asimetris khas Dapur Bucik: rounded di top-left & bottom-right */
+    .bucik-card {
+        border-radius: 1.15rem 0.2rem 1.15rem 0.2rem;
+    }
+
+    .bucik-btn {
+        border-radius: 0.75rem 0.15rem 0.75rem 0.15rem;
+    }
+
+    /* Badge stempel putus-putus miring khas Dapur Bucik */
+    .bucik-stamp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.25rem 0.72rem;
+        border-width: 1.5px;
+        border-style: dashed;
+        border-radius: 2px;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.15;
+        transform: rotate(-2deg);
+    }
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
